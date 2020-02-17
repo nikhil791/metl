@@ -1,0 +1,14 @@
+FROM centos:7
+
+WORKDIR /usr/local/metl
+ADD resources/metl.war /usr/local/metl/
+ADD resources/metl-war-3.4.3.a.202002102248.jar /usr/local/metl/
+ADD resources/metl-war-3.4.3.a.202002102248-sources.jar /usr/local/metl/
+COPY start_metl.sh /usr/local/metl/
+
+RUN yum install -y wget
+RUN wget jdk,1.8.0,-c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz ; tar -xzf jdk-8u131-linux-x64.tar.gz  -C /usr/local/metl
+
+
+RUN chown root:root /usr/local/metl/start_metl.sh
+RUN chmod +x /usr/local/metl/start_metl.sh

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: metl:1.0
+  db:
+    image: mysql:1.0
+    ports:
+    - "3307:3307"
+    environment:
+    - MYSQL_ROOT_PASSWORD=admin
+    - MYSQL_USER=admin
+    - MYSQL_PASSWORD=admin
+    - MYSQL_DATABASE=demodb
