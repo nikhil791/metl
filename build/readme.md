@@ -10,6 +10,8 @@ mysql:
 docker build -t mysql:1.0 ./mysql
 
 
+Before running docker-compose, make sure docker compose is installed on the machine with docker. For more reference:
+https://docs.docker.com/compose/install/
 
 
 Once images are build locally, use docker-compose to run containers
