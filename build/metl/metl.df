@@ -2,8 +2,8 @@ FROM centos:7
 
 WORKDIR /usr/local/metl
 ADD resources/metl.war /usr/local/metl/
-ADD resources/metl-war-3.4.3.a.202002102248.jar /usr/local/metl/
-ADD resources/metl-war-3.4.3.a.202002102248-sources.jar /usr/local/metl/
+ADD resources/metl-war-* /usr/local/metl/
+
 COPY start_metl.sh /usr/local/metl/
 
 RUN yum install -y wget
